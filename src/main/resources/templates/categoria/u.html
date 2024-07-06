@@ -1,0 +1,16 @@
+<div class="container">
+  
+    <h1>Editar país</h1>
+
+    <form action="/_bean/u" method="post">
+
+        <label for="id-nombre">Nombre</label>
+        <input id="id-nombre" type="text" name="nombre" autofocus="autofocus" th:value="${_bean.nombre}" />
+        <br/>
+
+        <input type="hidden" name="idPais" th:value="${_bean.id}"/>
+
+        <input type="submit"/>
+    </form>
+    <button onclick="window.location.href='/'">Cancelar</button>
+</div>

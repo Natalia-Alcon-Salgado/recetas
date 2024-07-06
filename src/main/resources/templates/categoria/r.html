@@ -1,0 +1,29 @@
+<div class="container">
+    <button onclick="window.location.href='/_bean/c'">Nuevo país</button>
+    <h1>Lista de países</h1>
+    <table class="table table-striped">
+        <thead>
+            <th>Nombre</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </thead>
+
+        <tr th:each="_bean : ${_beanes}">
+            
+            <td th:text="${_bean.nombre}" />
+
+            <td>
+                <button th:onclick="|window.location.href='/_bean/u?id=${_bean.id}'|">
+                    <img src="/img/lapiz.png" height="20" width="20">
+                </button>
+            </td>
+            
+            <td>
+                <form action="/_bean/d" method="post">
+                    <input type="hidden" name="id" th:value="${_bean.id}">
+                    <input alt="basura" type="image" src="/img/basura.png" height="20" width="20"/>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
