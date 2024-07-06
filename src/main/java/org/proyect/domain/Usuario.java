@@ -2,8 +2,6 @@ package org.proyect.domain;
 
 import java.util.List;
 
-import org.springframework.context.annotation.Role;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -36,13 +34,13 @@ public class Usuario {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles;
+    private List<Rol> roles;
 
     // Constructores
     public Usuario() {
     }
 
-    public Usuario(List<Receta> recetasFav, Boolean estaRegistrado, Boolean esAdmin, Persona persona, List<Role> roles) {
+    public Usuario(List<Receta> recetasFav, Boolean estaRegistrado, Boolean esAdmin, Persona persona, List<Rol> roles) {
         this.recetasFav = recetasFav;
         this.estaRegistrado = estaRegistrado;
         this.esAdmin = esAdmin;
