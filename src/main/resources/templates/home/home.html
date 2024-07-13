@@ -1,1 +1,116 @@
-<h1>HOLA</h1>
+<!-- Encabezado (Header):
+
+✓ Logo de la aplicación.
+✓ Barra de navegación con enlaces a las secciones principales (Inicio, Recetas, Categorías, Sobre Nosotros, Contacto).
+
+
+
+Botones de inicio de sesión y registro para usuarios no autenticados y un botón de perfil o de cerrar sesión para usuarios autenticados.
+Sección de Bienvenida:
+
+Un mensaje de bienvenida o eslogan que resuma la misión de la aplicación (por ejemplo, "Encuentra y comparte tus recetas favoritas").
+Una imagen destacada o un carrusel de imágenes de platos apetitosos.
+Recetas Destacadas:
+
+Una sección que muestre las recetas más populares o más recientes. Cada receta podría mostrar una imagen, el nombre de la receta y un enlace para ver más detalles.
+Un carrusel o cuadrícula de recetas.
+Categorías de Recetas:
+
+Una sección con diferentes categorías de recetas (por ejemplo, Entrantes, Platos Principales, Postres, etc.).
+Imágenes o iconos que representen cada categoría y enlaces para ver todas las recetas de esa categoría.
+Buscador de Recetas:
+
+Un campo de búsqueda donde los usuarios puedan buscar recetas por nombre, ingredientes o categoría.
+Testimonios o Comentarios:
+
+Testimonios de usuarios satisfechos o comentarios destacados sobre las recetas.
+Sección de Registro:
+
+Una llamada a la acción para que los nuevos usuarios se registren en la aplicación, destacando los beneficios de crear una cuenta.
+Pie de Página (Footer):
+
+Enlaces a redes sociales.
+Información de contacto.
+Enlaces a políticas de privacidad y términos de uso. -->
+
+<head> 
+    <!-- Incluimos el CSS de FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="content">
+
+<body>
+    <main>
+        <section class="bienvenida">
+            <h1>Bienvenido a MiRecetario</h1>
+            <p>Encuentra y comparte tus recetas favoritas</p>
+            <img src="images/welcome.jpg" alt="Delicious Food">
+        </section>
+
+        <section class="recetas-destacadas">
+            <h2>Recetas Destacadas</h2>
+            <div class="recetas-carrusel">
+                <!-- Ejemplo de receta destacada -->
+                <div class="receta">
+                    <img src="images/receta1.jpg" alt="Receta 1">
+                    <h3><a href="/recetas/1">Receta 1</a></h3>
+                </div>
+                <!-- Más recetas destacadas -->
+            </div>
+        </section>
+
+        <section class="categorias">
+            <h2>Categorías</h2>
+            <div class="categorias-grid">
+                <div class="categoria">
+                    <img src="images/entrantes.jpg" alt="Entrantes">
+                    <h3><a href="/categorias/entrantes">Entrantes</a></h3>
+                </div>
+                <!-- Más categorías -->
+            </div>
+        </section>
+
+        <section class="buscador">
+            <h2>Buscar Recetas</h2>
+            <form action="/buscar" method="get">
+                <input type="text" name="query" placeholder="Buscar recetas...">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <section class="testimonios">
+            <h2>Testimonios</h2>
+            <div class="testimonios-grid">
+                <!-- Ejemplo de testimonio -->
+                <div class="testimonio">
+                    <p>"Las mejores recetas que he encontrado en línea!"</p>
+                    <p>- Usuario Satisfecho</p>
+                </div>
+                <!-- Más testimonios -->
+            </div>
+        </section>
+
+        <section class="registro">
+            <h2>¿Nuevo aquí?</h2>
+            <p>Regístrate para guardar tus recetas favoritas y compartir las tuyas.</p>
+            <a href="/registro" class="btn">Registrarse</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MiRecetario. Todos los derechos reservados.</p>
+        <ul>
+            <li><a href="/privacidad">Política de Privacidad</a></li>
+            <li><a href="/terminos">Términos de Uso</a></li>
+        </ul>
+        <div class="redes-sociales">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+
+</html>
